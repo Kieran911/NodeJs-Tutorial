@@ -22,9 +22,9 @@ const server = http.createServer((req, res) => {
     });
     req.on('end', () => {
       const paresedBody = Buffer.concat(body).toString();
-      console.log(paresedBody);
+      const message = paresedBody.split('=')[1];
+      fs.writeFileSync('message.txt', message);
     });
-    fs.writeFileSync('message.txt', 'DUMMY');
     res.statusCode = 302;
     res.setHeader('Location', '/');
     return res.end();
