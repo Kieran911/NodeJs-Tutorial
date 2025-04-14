@@ -23,7 +23,7 @@ const requestHandler = (req, res) => {
     return req.on('end', () => {
       const parsedBody = Buffer.concat(body).toString();
       const message = parsedBody.split('=')[1];
-      // fs.writeFileSync
+      // fs.writeFileSync('message.txt', message)
       fs.writeFile('message.txt', message, (err) => {
         res.statusCode = 302;
         res.setHeader('Location', '/');
@@ -40,3 +40,12 @@ const requestHandler = (req, res) => {
 };
 
 module.exports = requestHandler;
+
+// Exporting multiple stuffs
+
+//module.exports = {
+//    handler: requestHandler,
+//    someText: 'Some hard coded texts'
+//}
+
+// exports.handler = requestHandler
