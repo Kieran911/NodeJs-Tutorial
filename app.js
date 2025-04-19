@@ -7,7 +7,15 @@ const expressHbs = require('express-handlebars').engine;
 
 const app = express(); // app could be any name of your choice
 
-app.engine('hbs', expressHbs());
+app.engine(
+  'hbs',
+  expressHbs({
+    defaultLayout: false,
+    layoutsDir: 'views/layouts/',
+    defaultLayout: 'main-layout',
+    extname: 'hbs',
+  })
+);
 app.set('view engine', 'hbs');
 app.set('views', 'views');
 
