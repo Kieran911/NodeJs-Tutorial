@@ -11,6 +11,7 @@
   "author": "Arinze Kieran",
   "license": "ISC",
   "devDependencies": {
+    "@types/express-handlebars": "^5.3.1",
     "nodemon": "^3.1.9"
   },
   "dependencies": {
