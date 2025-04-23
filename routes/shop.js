@@ -5,12 +5,12 @@ const shopController = require('../controllers/shop');
 
 const routes = express.Router();
 
-routes.get('/', shopController.getProducts);
+routes.get('/', shopController.getIndex);
 
-routes.get('/products');
+routes.get('/products', shopController.getProducts);
 
-routes.get('/cart');
+routes.get('/cart', shopController.getCart);
 
-routes.get('/checkout');
+routes.get('/checkout', shopController.getCheckout);
 
 module.exports = routes;
