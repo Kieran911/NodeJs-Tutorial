@@ -1,10 +1,16 @@
 const path = require('path');
 const express = require('express');
 
-const productsController = require('../controllers/products');
+const shopController = require('../controllers/shop');
 
 const routes = express.Router();
 
-routes.get('/', productsController.getProducts);
+routes.get('/', shopController.getProducts);
+
+routes.get('/products');
+
+routes.get('/cart');
+
+routes.get('/checkout');
 
 module.exports = routes;
